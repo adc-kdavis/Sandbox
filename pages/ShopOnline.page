@@ -1,0 +1,12 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false"
+           controller="ShopOnline" >         
+    <apex:stylesheet value="{!URLFOR($Resource.Styles, 'styles.css')}"/>
+    
+    <h1>Order Online Today</h1>
+    <apex:image />
+    <apex:form >
+   
+   
+   
+    </apex:form>
+</apex:page>

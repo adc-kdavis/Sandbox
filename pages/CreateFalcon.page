@@ -1,0 +1,60 @@
+<apex:page standardStylesheets="false" standardController="Falcon_Pedigree__c" cache="false" sidebar="false">
+  <b>Hello {!$User.FirstName}</b> <br/><br/>
+
+  <apex:form >
+  
+  <apex:pageBlock title="Create Your Falcons Profile">
+      <apex:pageBlockSection collapsible="False" title="Basic Information" columns="1">
+          <apex:inputField value="{!Falcon_Pedigree__c.Falcon_Breeder__c}"/>
+          <apex:inputField required="true" value="{!Falcon_Pedigree__c.Current_Owner__c}"/>
+          <apex:inputField required="True" value="{!Falcon_Pedigree__c.Name}"/>
+          <apex:inputField required="True" value="{!Falcon_Pedigree__c.Band_Number__c}"/>
+          <apex:inputField required="True" value="{!Falcon_Pedigree__c.Sex__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.CBWC__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Hatch_Year__c}"/>
+          <apex:inputField required="True" value="{!Falcon_Pedigree__c.Unknown_Year__c}"/>  
+
+      </apex:pageBlockSection>  
+      
+       <apex:pageBlockSection title="Falcon Disposition" columns="1">
+       <h>Please enter your falcons current status information to better the quality of our database. (Applicable only to deceased, transferred, or lost falcons)</h>
+       <br/><br/><br/>
+
+          <apex:inputField value="{!Falcon_Pedigree__c.Disposition__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Death_Year__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Cause_of_Death__c}"/>
+     
+
+      </apex:pageBlockSection> 
+      
+      <apex:pageBlockSection title="Pedigree Information" columns="1">
+       <h>Please identify existing falcons in our records that parented yours, to improve our pedigree information.
+       If your falcons parents are not present in our records, please create a record for the parent(s) first, or simply leave the fields blank.</h>
+       
+       <br/><br/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Fathers_Name__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Mothers_Name__c}"/>
+          
+      </apex:pageBlockSection>
+      
+       <apex:pageBlockSection title="Geographic Information" columns="1">
+       <h>Please take a moment to identify the geographic information associated with your hawk to improve our record information.</h>
+       
+       <br/><br/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Country_of_Origin__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.State__c}"/>
+          <apex:inputField value="{!Falcon_Pedigree__c.City__c}"/>
+          
+      </apex:pageBlockSection>
+             
+      <apex:pageBlockSection title="Comments" columns="1">
+      <h>If you have any comments you would like to provide that are not addressed above, please provide them below.</h>
+      <br/><br/><br/>
+          <apex:inputField value="{!Falcon_Pedigree__c.Comments__c}"/>
+      </apex:pageBlockSection>
+      
+      <apex:commandButton value="Update!" action="{!save}"/>
+      
+  </apex:pageBlock>  
+  </apex:form>
+</apex:page>

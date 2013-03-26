@@ -1,0 +1,23 @@
+<apex:page standardController="Account">
+
+<center>
+<apex:sectionHeader title="Vacation Requets"/>
+</center>
+<apex:form >
+
+<apex:pageBlock >
+
+<apex:pageBlockTable value="{!Account}" var="acc">
+<apex:column style="text-align:center">
+<apex:inputField value="{!acc.Name}" label="Name" required="true"/>
+</apex:column>
+
+<apex:column style="text-align:center">
+<apex:commandButton action="{!Save}" value="Save"/>
+</apex:column>
+</apex:pageBlockTable>>
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

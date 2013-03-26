@@ -1,0 +1,37 @@
+<apex:page showHeader="false">
+<html>
+<head></head>
+<body>
+<div class="header">asdfasdf</div>
+<div class="categories">asdfasdf</div>
+
+</body>
+
+
+
+
+</html>
+
+<style>
+
+.header{
+    z-index: 1;
+    width:98%;
+    height:75px;
+    border-radius:5px;
+    background-color:#E0F8E0;
+    position:fixed;
+
+}
+
+.categories{
+    float:left;
+    margin-top:100px;
+    width:60px;
+    height:400px;
+    border-radius:5px;
+    background-color:#CEECF5;
+}
+
+</style>
+</apex:page>

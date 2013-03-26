@@ -1,0 +1,51 @@
+<apex:page standardStylesheets="false" standardController="Hunting_Performance__c" cache="false" sidebar="false">
+  <b>Hello {!$User.FirstName}</b> <br/><br/>
+
+  <apex:form >
+  
+  <apex:pageBlock title="Falcon Hunting Information">
+      <apex:pageBlockSection collapsible="False" title="Identify an Existing Bird" columns="1">
+          <apex:inputField required="True" value="{!Hunting_Performance__c.Name}"/>
+          <apex:inputField required="True" value="{!Hunting_Performance__c.Falcons_Name__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Flying_Weight__c}"/>
+      </apex:pageBlockSection>  
+      
+       <apex:pageBlockSection title="Hunting Information" columns="1">
+       <h>Please enter the information regarding your Falcons performance in catching various categories of game.</h>
+       <br/><br/><br/>
+          <apex:inputField value="{!Hunting_Performance__c.Number_of_Seasons_Hunted__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Squirrels_Caught__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Rabbits_Caught__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Hares_Caught__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Upland_Birds_Caught__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Waterfowl_Caught__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Miscellaneous_Catches__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Season_Best__c}"/>
+
+      </apex:pageBlockSection> 
+      
+      <apex:pageBlockSection title="Personal Review" columns="1">
+       <h>Please score your Falcons performance in the following categories on a scale from 1(Poor) to 5(Excellent).</h>
+       
+         <br/><br/><br/>
+         
+          <apex:inputField required="True" value="{!Hunting_Performance__c.Overall_Rating__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Flight_Speed__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Group_Hunting__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Dog_Hunting__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Following_Positioning__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Footing__c}"/>
+          <apex:inputField value="{!Hunting_Performance__c.Persistence__c}"/>
+      </apex:pageBlockSection> 
+      
+      <apex:pageBlockSection title="Comments" columns="1">
+      <h>If you have any comments you would like to provide that are not addressed above, please provide them below.</h>
+      <br/><br/><br/>
+          <apex:inputField value="{!Hunting_Performance__c.Comments__c}"/>
+      </apex:pageBlockSection>
+      
+      <apex:commandButton value="Create Review" action="{!save}"/>
+      
+  </apex:pageBlock>  
+  </apex:form>
+</apex:page>

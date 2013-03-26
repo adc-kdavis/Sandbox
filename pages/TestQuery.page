@@ -1,0 +1,36 @@
+<apex:page id="pg" controller="KilianTestController">
+  <apex:form id="frm">
+  <apex:pageBlock id="pgBlock">
+    
+          <apex:inputText id="acctSearch"></apex:inputText>
+          <apex:outputLink styleClass="btn" value="#" onclick="getRemoteAccount();">Find Account</apex:outputLink>
+
+  </apex:pageBlock>
+  
+  </apex:form>
+  <apex:outputText id="acctId"></apex:outputText>
+  <apex:outputText id="acctName"></apex:outputText>
+  <apex:outputText id="responseErrors"></apex:outputText>
+  
+  <script type="text/javascript">
+    function getRemoteAccount() {
+        var accountName = document.getElementById('{!$Component.pg.frm.pgBlock.acctSearch}');
+    
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.KilianTestController.getAccount}', 
+            accountName, 
+            function(result, event){
+                if (event.status) {
+                    document.getElementById('{!$Component.pg.acctId}').innerHTML = result.Id
+                    document.getElementById('{!$Component.pg.acctName}').innerHTML = result.Name;
+                } else if (event.type === 'exception') {
+                    document.getElementById("{!$Component.pg.responseErrors}").innerHTML = event.message;
+                } else {
+                    document.getElementById("{!$Component.pg.responseErrors}").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    </script>
+</apex:page>
